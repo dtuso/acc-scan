@@ -14,14 +14,14 @@ var
   trackNames = ['Barcelona','brands_hatch','Hungaroring','Kyalami','Laguna_Seca','misano','mount_panorama','nurburgring','Paul_Ricard','Silverstone','Spa','Suzuka','Zandervoort','Zolder'], 
   colNames = "'track','setup','tyre lf','tyre rf','tyre lr','tyre rr','cam lf','cam rf','cam lr','cam rr','toe fl','toe fr','toe lr','toe rr','cas lf','cas rf','steer','tc1','tc2','abs','fuel','pad f','pad r','roll f','roll r','spring lf','spring rf','spring lr','spring rr','bsup lf','bsup rf','bsup lr','bsup rr','bsdn lf','bsdn rf','bsdn lr','bsdn rr','bsw lf','bsw rf','bsw lr','bsw rr','bias','bs lf','bs rf','bs lr','bs rr','bf lf','bf rf','bf lr','bf rr','rs lf','rs rf','rs lr','rs rr','rf lf','rf rf','rf lr','rf rr','rh lf','rh rf','rh lr','rh rr','wing','duc f','duc r','preload','fuelPerLap','20m'", 
   trackFolder= "..\\..\\Documents\\Assetto Corsa Competizione\\Setups\\" + carName,
-  reportCsv = "chart_" + carname + ".csv";
+  reportCsv = "chart_" + carName + ".csv";
   
 
 fs.writeFileSync(reportCsv, colNames, {encoding:"UTF8"});
 
 _.each(trackNames, function(trackName){
   var setupNames = fs.readdirSync(trackFolder);
-  _each(setupNames, function(setupName) {
+  _.each(setupNames, function(setupName) {
     var fileName = trackFolder + setupName;
     var setup = getJSON(fileName);
     var newLine = colNames.replace('track', trackName).replace('setup', setupName);
