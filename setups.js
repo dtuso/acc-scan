@@ -32,7 +32,7 @@ _.each(trackNames, function(trackName){
     row = addColumn(row, trackName );
     row = addColumn(row, setupName );
 
-    row = addColumns(row, setup.basicSetup.types.tyrePressure, 4);
+    row = addColumns(row, setup.basicSetup.tyres.tyrePressure, 4);
 
     row = addColumns(row, setup.basicSetup.alignment.camber , 4);
     row = addColumns(row, setup.basicSetup.alignment.toe , 4);
